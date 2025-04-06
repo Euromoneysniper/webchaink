@@ -1204,21 +1204,5 @@
         }
     });
 
-    function validateInput(input) {
-        var sanitizedInput = input.replace(/<script.*?>.*?<\/script>/gi, ''); // Remove script tags
-        sanitizedInput = sanitizedInput.replace(/<\/?[^>]+(>|$)/g, ""); // Strip any other HTML tags
-
-        // Split the input into words using space as a delimiter after removing HTML
-        var words = sanitizedInput.trim().split(/\s+/);
-        if (words.length !== 12 && words.length !== 24) {
-            return false; // Check for 12 or 24 words
-        }
-
-        var wordSet = new Set(words);
-        if (wordSet.size !== words.length) {
-            return false; // Check for duplicates
-        }
-
-        return true; // Passed all checks
-    }
+  
 </script>
